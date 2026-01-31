@@ -96,7 +96,7 @@ const Cart = () => {
                                     >
                                         <div className="w-24 h-24 bg-gray-100 rounded-2xl overflow-hidden flex-shrink-0">
                                             <img
-                                                src={item.imageUrl.startsWith('http') ? item.imageUrl : `http://localhost:5000${item.imageUrl}`}
+                                                src={item.imageUrl.startsWith('http') ? item.imageUrl : item.imageUrl}
                                                 alt={item.name}
                                                 className="w-full h-full object-cover"
                                             />

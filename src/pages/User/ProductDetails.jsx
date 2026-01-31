@@ -21,7 +21,7 @@ const ProductDetails = () => {
 
     useEffect(() => {
         if (!product) {
-            fetch(`http://localhost:5000/api/products/${id}`)
+            fetch(`/api/products/${id}`)
                 .then(res => res.json())
                 .then(data => {
                     setProduct(data);
@@ -47,7 +47,7 @@ const ProductDetails = () => {
     if (loading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
     if (!product) return <div className="min-h-screen flex items-center justify-center text-red-600 font-bold uppercase">Product Not Found</div>;
 
-    const imageUrl = product.imageUrl.startsWith('http') ? product.imageUrl : `http://localhost:5000${product.imageUrl}`;
+    const imageUrl = product.imageUrl.startsWith('http') ? product.imageUrl : product.imageUrl;
 
     return (
         <div className="min-h-screen bg-[#FDFBF7] pb-12">

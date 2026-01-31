@@ -29,7 +29,7 @@ const Dashboard = () => {
 
     React.useEffect(() => {
         setLoading(true);
-        fetch('http://localhost:5000/api/products')
+        fetch('/api/products')
             .then(res => {
                 if (!res.ok) throw new Error('Failed to fetch products');
                 return res.json();
@@ -315,7 +315,7 @@ const Dashboard = () => {
                             >
                                 <div className="aspect-[3/4] overflow-hidden relative bg-gray-100">
                                     <img
-                                        src={`http://localhost:5000${product.imageUrl}`}
+                                        src={product.imageUrl}
                                         alt={product.name}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         onError={(e) => e.target.src = 'https://via.placeholder.com/300?text=No+Image'}
