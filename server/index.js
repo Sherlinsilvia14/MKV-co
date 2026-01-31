@@ -177,7 +177,8 @@ app.get('/api/products/:id', async (req, res) => {
 // Serve static assets in production
 app.use(express.static(path.join(__dirname, '../dist')));
 
-app.get('*', (req, res) => {
+// Catch-all route for client-side routing (Express 5 compatible)
+app.get(/.*/, (req, res) => {
     res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
